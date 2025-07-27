@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教材管理系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3FA8C4',
+                        secondary: '#007bff',
+                        accent: '#00c292',
+                        neutral: '#f8f9fa',
+                        dark: '#343a40'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- 导航栏 -->
+    <nav class="bg-primary shadow-md fixed w-full z-10 top-0">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-book text-white text-2xl"></i>
+                <span class="text-white text-xl font-bold">教材管理系统</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-white hover:text-gray-200 transition">首页</a>
+                <a href="#features" class="text-white hover:text-gray-200 transition">功能介绍</a>
+                <a href="#access" class="text-white hover:text-gray-200 transition">系统访问</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary/95 backdrop-blur-sm">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#home" class="text-white hover:text-gray-200 py-2 transition">首页</a>
+                <a href="#features" class="text-white hover:text-gray-200 py-2 transition">功能介绍</a>
+                <a href="#access" class="text-white hover:text-gray-200 py-2 transition">系统访问</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="pt-24 pb-16 bg-gradient-to-br from-primary/90 to-primary">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                    <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-white mb-6 leading-tight text-shadow">
+                        高效便捷的<br>教材管理解决方案
+                    </h1>
+                    <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 mb-8 max-w-lg">
+                        为学校、培训机构提供全方位的教材管理服务，简化教材管理流程，提高工作效率。
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+                        <a href="#access" class="bg-white text-primary font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+                            立即访问 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#features" class="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition">
+                            了解功能
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://picsum.photos/id/24/600/400" alt="教材管理系统界面" class="rounded-xl shadow-2xl w-full max-w-lg mx-auto transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能介绍 -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">核心功能</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">全面覆盖教材管理的各个环节，满足不同角色的使用需求</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 功能卡片1 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-book text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">教材信息管理</h3>
+                    <p class="text-gray-600">全面管理教材的基本信息，包括教材分类、库存状态、借阅记录等，支持快速查询和更新。</p>
+                </div>
+
+                <!-- 功能卡片2 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-users text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">多角色管理</h3>
+                    <p class="text-gray-600">支持管理员、教师和学生三种角色，每种角色拥有不同的操作权限，确保系统安全有序运行。</p>
+                </div>
+
+                <!-- 功能卡片3 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-exchange text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">借阅归还管理</h3>
+                    <p class="text-gray-600">实现教材借阅、归还全流程管理，自动记录操作日志，支持逾期提醒和违规处理。</p>
+                </div>
+
+                <!-- 功能卡片4 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-bar-chart text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">数据统计分析</h3>
+                    <p class="text-gray-600">提供多维度的数据统计报表，直观展示教材使用情况、借阅趋势等关键指标。</p>
+                </div>
+
+                <!-- 功能卡片5 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-search text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">智能检索</h3>
+                    <p class="text-gray-600">支持按教材名称、作者、ISBN等多条件组合查询，快速定位所需教材信息。</p>
+                </div>
+
+                <!-- 功能卡片6 -->
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+                        <i class="fa fa-cog text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">系统设置</h3>
+                    <p class="text-gray-600">灵活配置系统参数，包括借阅规则、通知设置等，适应不同场景的使用需求。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 系统访问 -->
+    <section id="access" class="py-16 bg-gradient-to-br from-primary/90 to-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">访问系统</h2>
+                <p class="max-w-2xl mx-auto opacity-90">点击下方链接进入系统，登录信息请联系管理员获取</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-user-circle mr-3"></i> 前台访问
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium opacity-90 mb-1">访问地址</label>
+                            <a href="http://localhost:8080/django47nia/admin/dist/index.html#/index" target="_blank" class="bg-white/20 p-3 rounded-lg font-mono text-sm overflow-x-auto flex items-center hover:bg-white/30 transition">
+                                http://localhost:8080/django47nia/admin/dist/index.html#/index
+                                <i class="fa fa-external-link ml-2"></i>
+                            </a>
+                        </div>
+
+                        <div class="pt-4">
+                            <h4 class="font-semibold mb-3">访问说明</h4>
+                            <p class="text-white/80 text-sm">
+                                前台系统面向学生和教师用户，提供教材查询、借阅申请、个人中心等功能。
+                                登录账号请联系管理员获取。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fa fa-cogs mr-3"></i> 后台管理
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium opacity-90 mb-1">访问地址</label>
+                            <a href="http://localhost:8080/django47nia/admin/dist/index.html" target="_blank" class="bg-white/20 p-3 rounded-lg font-mono text-sm overflow-x-auto flex items-center hover:bg-white/30 transition">
+                                http://localhost:8080/django47nia/admin/dist/index.html
+                                <i class="fa fa-external-link ml-2"></i>
+                            </a>
+                        </div>
+
+                        <div class="pt-4">
+                            <h4 class="font-semibold mb-3">访问说明</h4>
+                            <p class="text-white/80 text-sm">
+                                后台管理系统面向管理员用户，提供教材管理、用户管理、系统设置等功能。
+                                登录账号请联系管理员获取。
+                            </p>
+                        </div>
+
+                        <div class="mt-6">
+                            <a href="http://localhost:8080/django47nia/admin/dist/index.html" target="_blank" class="block w-full bg-white text-primary text-center font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition transform hover:-translate-y-1">
+                                进入管理后台 <i class="fa fa-external-link ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <i class="fa fa-book text-primary text-xl"></i>
+                        <span class="text-xl font-bold">教材管理系统</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">高效便捷的教材管理解决方案</p>
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="https://github.com/Zhouyuhong-123/work2" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fa fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fa fa-envelope text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fa fa-question-circle text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2023 教材管理系统 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // 关闭移动端菜单
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
