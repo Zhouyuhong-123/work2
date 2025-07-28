@@ -89,7 +89,7 @@
 
 ## 访问方式
 ### 演示地址
-[访问链接](http://localhost:8080/django47nia/admin/dist/index.html#/login)
+[http://management.cn](http://localhost:8080/django47nia/admin/dist/index.html#/login)
 
 ### 账号密码
 - 管理员账号
