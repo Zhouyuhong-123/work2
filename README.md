@@ -95,11 +95,8 @@
 
 ## 访问方式
 
-### 前台访问
-- 地址：http://localhost:8080/django47nia/admin/dist/index.html#/index
-
-### 后台管理访问
-- 地址：http://localhost:8080/django47nia/admin/dist/index.html
+### 演示地址
+- 地址：http://localhost:8080/django47nia/admin/dist/index.html#/login
 
 ## 账号密码
 
